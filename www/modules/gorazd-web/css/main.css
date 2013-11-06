@@ -180,3 +180,22 @@ form.gsfb-form#generate-init legend {
 .reference-box img {
   width: 150px;
 }
+
+
+
+/* Bottom login box */
+.copyright, #login {
+  display: inline-block;
+  vertical-align: middle;
+}
+#login {
+  padding: 0.2em 0.5em;
+  background-color: #222222;
+}
+#login fieldset {
+  border: none;
+}
+.loginbox form, .loginbox input {
+  display: inline-block;
+  margin: 0 0.7em;
+}

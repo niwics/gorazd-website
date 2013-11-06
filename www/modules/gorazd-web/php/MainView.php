@@ -49,13 +49,37 @@ EOT;
   {  
     ?>
     <div id="footer">
-      <div class="copyright left">&copy; <a href="http://www.niwi.cz">niwi</a> <?php echo conf('copyrightYear');?> | <a href="http://gorazd.niwi.cz" title="Redakční systém Gorazd">RS Gorazd</a></div>
+      <div class="copyright">&copy; <a href="http://www.niwi.cz">niwi</a> <?php echo conf('copyrightYear');?> | <a href="http://gorazd.niwi.cz" title="Redakční systém Gorazd">RS Gorazd</a></div>
     <?php
+    echo $this->controller->loginBoxString;
     $this->displayFooterAdmin();
   ?>
       <br class="clear invisible" />
     </div>
 <?php
+  }
+
+
+
+
+
+  /**
+   * Displays the whole login dialog.
+   */
+  public static function printLoginDialog()
+  {
+    return <<<EOT
+        <form action="" method="POST" id="login">
+          <fieldset>
+            <label for="login-username">Jméno: </label>
+            <input type="text" id="login-username" name="login-username" size="8" maxlength="127">
+            <label for="login-password">Heslo: </label>
+            <input type="password" id="login-password" name="login-password" size="8" maxlength="32">
+            <input type="checkbox" id="autologin" name="autologin"><label for="autologin">Přihlásit trvale?</label>
+            <input id="submit-button" type="submit" class="button" value="Přihlásit">
+          </fieldset>
+        </form>
+EOT;
   }
 }
 ?>

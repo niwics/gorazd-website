@@ -88,7 +88,7 @@ class MainController extends \Gorazd\System\Controller
     foreach ($webs as $link => $data)
     {
       $out .= <<<EOT
-      <a href="$link" class="reference-box">
+      <a href="http://$link" class="reference-box">
         <img src="/images/gorazd-web/references/{$data[0]}.jpg"><br>{$data[1]}
       </a>
 EOT;
@@ -180,6 +180,30 @@ INSERT INTO `menuItem` (`pageId`, `websiteId`, `url`, `rank`)
 EOT;
     
     return $sql;
+  }
+
+
+
+  /**
+   * Zobrazi formular pro prihlaseni.
+   */
+  protected function prepareLoginBox ()
+  {
+    $out = '';
+    if (!Sys\Env::$user->isLogged())
+    {
+      $wc = $this->getViewClass();
+      $out .= call_user_func(array($wc, 'printLoginDialog'));
+    }
+    else
+    {
+      $out .= "\n      <div id=\"login\" class=\"loginbox\">\n";
+      $out .= "Přihlášen". Sys\Env::$user->sexTermination .": \n" . Sys\Env::$user->adminType . "\n";
+      $out .= Sys\Env::$user->label() . "\n";
+      $out .= ' <form action="'.ROOT_URL.'" method="post"><input type="submit" name="gs_logOut" value="Odhlásit" class="button" /></form>'."\n";
+      $out .= "      </div>\n";
+    }
+    $this->loginBoxString = $out;
   }
 }
 
