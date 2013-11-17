@@ -167,13 +167,13 @@ INSERT INTO `website` (`id`, `name`, `title`)
 
 -- add the main page
 INSERT INTO `page` (`id`, `title`, `content`, `controller`, `readPermission`, `writePermission`)
-  VALUES (1,'Úvodní strana', '<p>Vítejte na úvodní stránce webu!</p>', 'WebAdmin\InitController', 0, 5);
+  VALUES (1,'Úvodní strana', '<p>Vítejte na úvodní stránce webu!</p>', 'WebAdmin\\InitController', 0, 5);
 INSERT INTO `menuItem` (`pageId`, `websiteId`, `url`, `rank`)
   VALUES (1, 1, '', 1);
 
 -- add MenuController
 INSERT INTO `page` (`id`, `title`, `content`, `controller`, `readPermission`, `writePermission`)
-   VALUES (2, 'Struktura webu', 'Pomocí struktury menu níže je možné upravovat jednotlivé stránky a menu.', 'WebAdmin\MenuController', 5, 5);
+   VALUES (2, 'Struktura webu', 'Pomocí struktury menu níže je možné upravovat jednotlivé stránky a menu.', 'WebAdmin\\MenuController', 5, 5);
 INSERT INTO `menuItem` (`pageId`, `websiteId`, `url`, `rank`)
   VALUES (2, 1, 'web-structure', 1);
 
