@@ -9,13 +9,13 @@ use \Gorazd\System as Sys;
  */
 class MainView extends \Gorazd\System\View
 {
-  /**
-   * Display page top part
-   */
-  protected function displayTop ()
-  {
-    $root = ROOT_URL;
-    echo <<<EOT
+    /**
+     * Display page top part
+     */
+    protected function displayTop()
+    {
+        $root = ROOT_URL;
+        echo <<<EOT
     <div id="top">
       <img src="/images/gorazd-web/top.jpg">
       <div id="top-box">
@@ -28,47 +28,43 @@ class MainView extends \Gorazd\System\View
       <a href="#download" class="links" id="link-download">Download</a>
     </div>
 EOT;
-  }
+    }
 
 
+    /**
+     * Simple basic function for displaying the content of the page.
+     */
+    protected function displayHeading()
+    {
+        ;
+    }
 
-  /**
-   * Simple basic function for displaying the content of the page.
-   */
-  protected function displayHeading()
-  {
-    ;
-  }
-  
-  
-  
-  /**
-   * Dispalys the page footer.
-   */
-  protected function displayFooter()
-  {  
-    ?>
-    <div id="footer">
-      <div class="copyright">&copy; <a href="http://www.niwi.cz">niwi</a> <?php echo conf('copyrightYear');?> | <a href="http://gorazd.niwi.cz" title="Redakční systém Gorazd">RS Gorazd</a></div>
+
+    /**
+     * Dispalys the page footer.
+     */
+    protected function displayFooter()
+    {
+        ?>
+        <div id="footer">
+            <div class="copyright">&copy; <a href="http://www.niwi.cz">niwi</a> <?php echo conf('copyrightYear'); ?> |
+                <a href="http://gorazd.niwi.cz" title="Redakční systém Gorazd">RS Gorazd</a></div>
+            <?php
+            echo $this->controller->loginBoxString;
+            $this->displayFooterAdmin();
+            ?>
+            <br class="clear invisible"/>
+        </div>
     <?php
-    echo $this->controller->loginBoxString;
-    $this->displayFooterAdmin();
-  ?>
-      <br class="clear invisible" />
-    </div>
-<?php
-  }
+    }
 
 
-
-
-
-  /**
-   * Displays the whole login dialog.
-   */
-  public static function printLoginDialog()
-  {
-    return <<<EOT
+    /**
+     * Displays the whole login dialog.
+     */
+    public static function printLoginDialog()
+    {
+        return <<<EOT
         <form action="" method="POST" id="login">
           <fieldset>
             <label for="login-username">Jméno: </label>
@@ -80,6 +76,7 @@ EOT;
           </fieldset>
         </form>
 EOT;
-  }
+    }
 }
+
 ?>
