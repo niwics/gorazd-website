@@ -19,15 +19,19 @@ class MainController extends \Gorazd\System\Controller
     # basic tables to export
     static $TABLES = array(
         'error404', 'TOK',
-        'visit', 'visitPage',
+        'visit', 'visitPage', 'visitMonth',
         'history', 'historyRecord',
         'website', 'section', 'page', 'menuItem',
         'person', 'user', 'permission',
-        'errorLog', 'schedule', # 'mail', 'mailRecipient',
+        'errorLog', 'schedule',
         'personDetail', 'personRelation', 'personSetting', 'personView',
-        'articlesCategory', 'article',
+        'articlesCategory', 'article', 'pageArticle',
         'comment', 'event',
-        'version', 'ticket', 'ticketAssignement'
+        'version', 'ticket', 'ticketAssignement', 'ticketWork',
+        'actualitiesCategory', 'actuality',
+        'mail', 'mailRecipient',
+        'poll', 'pollCategory', 'pollOption', 'pollVote',
+        'shop_cart', 'shop_category', 'shop_order', 'shop_orderProducts', 'shop_product', 'shop_productInCategory'
     );
 
     /**
