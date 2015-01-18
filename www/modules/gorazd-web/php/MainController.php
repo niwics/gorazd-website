@@ -19,7 +19,7 @@ class MainController extends \Gorazd\System\Controller
     # basic tables to export
     static $TABLES = array(
         'error404', 'TOK',
-        'visit', 'visitPage', 'visitMonth',
+        'visit', 'visitPage', 'visitByDay',
         'history', 'historyRecord',
         'website', 'section', 'page', 'menuItem',
         'person', 'user', 'permission',
@@ -84,6 +84,7 @@ class MainController extends \Gorazd\System\Controller
         $webs = array(
             'www.iklubovna.cz' => array('iklubovna', 'Children community website'),
             'www.niwi.cz' => array('niwi', 'Author\'s personal website'),
+            'geo.niwi.cz' => array('geo', 'Database of Czech geodetic symbols'),
             'www.spjf.cz' => array('spjf', 'Children organisation'),
             'www.dlouhodobka.cz' => array('dlouhodobka', 'Long-term games for children teams'),
             'obchod.spjf.cz' => array('obchod', 'SPJF organisation e-shop')

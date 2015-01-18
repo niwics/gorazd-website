@@ -159,21 +159,25 @@ form.gsfb-form#generate-init legend {
 .reference-box {
     display: inline-block;
     width: 180px;
-    height: 220px;
+    height: 200px;
     margin: 1em;
     padding: 1em;
-    border: 3px solid #555555;
-    line-height: 2em;
+    border: 3px solid #2A2A2A;
+    border-radius: 15px;
+    line-height: 1.6em;
     text-align: center;
     vertical-align: top;
     text-decoration: none;
 }
 .reference-box:hover {
-    background-color: #333333;
-    text-decoration: underline;
+    background-color: #2A2A2A;
 }
 .reference-box img {
     width: 150px;
+}
+.reference-box:hover img {
+    -webkit-filter: drop-shadow(8px 4px 8px rgba(0,0,0,1.0));
+    filter: drop-shadow(8px 4px 8px rgba(0,0,0,1.0));
 }
 
 /* Bottom login box */
